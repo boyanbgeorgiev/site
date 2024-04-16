@@ -1,5 +1,8 @@
 <?php
+session_start();
 
+    include("connection.php");
+    include("functions.php");
 
 ?>
 
@@ -8,7 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Signup</title>
 </head>
 <body>
 
@@ -20,9 +23,9 @@
             <input type="text" name="user_name"><br><br>
             <input type="password" name="password"><br><br>
 
-            <input type="submit" value="Login"><br><br>
+            <input type="submit" value="Signuo"><br><br>
 
-            <a href="signup.php">Click to login</a><br><br>
+            <a href="login.php">Click to login</a><br><br>
        </form> 
 
     </div>
