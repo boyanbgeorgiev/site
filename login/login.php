@@ -15,12 +15,14 @@
     <div id="box">
 
        <form method="post">
+       <div>Log in</div>
+
             <input type="text" name="user_name"><br><br>
             <input type="password" name="password"><br><br>
 
             <input type="submit" value="Login"><br><br>
 
-            <a href="signup.php">Signup</a>
+            <a href="signup.php">Click to signup</a><br><br>
        </form> 
 
     </div>
