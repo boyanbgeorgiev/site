@@ -1,29 +1,26 @@
 <?php
 session_start();
 
-    include("connection.php");
-    include("functions.php");
+include("connection.php");
+include("functions.php");
 
-    if($SERVER['REQUEST_METHOD'] == "POST")
-    {
-        $user_name = $_POST['user_name'];
-        $password = $_POST['password'];
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $user_name = $_POST['user_name'];
+    $password = $_POST['password'];
 
-        if(!empty($user_name) && !empty($password) && !is_numeric($user_name)){
+    if (!empty($user_name) && !empty($password) && !is_numeric($user_name)) {
+        // Save to query
+        $user_id = random_num(20);
+        $query = "INSERT INTO users (user_id, user_name, password) VALUES ('$user_id', '$user_name', '$password')";
 
+        mysqli_query($con, $query);
 
-            //save to query
-            $user_id = random_num(20);
-            $query = "insert into users (user_id,user_name,password) values ('$user_id','$user_name','$password')";
-
-            mysqli_query($con, $query);
-
-            header("Location: login.php");
-            die;
-    }else{
-        echo "PLease enter correct info";
+        header("Location: login.php");
+        die;
+    } else {
+        echo "Please enter correct info";
     }
-
+}
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +40,7 @@ session_start();
             <input type="text" name="user_name"><br><br>
             <input type="password" name="password"><br><br>
 
-            <input type="submit" value="Signuo"><br><br>
+            <input type="submit" value="Submit"><br><br>
 
             <a href="login.php">Click to login</a><br><br>
        </form> 
