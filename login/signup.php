@@ -13,10 +13,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $user_id = random_num(20);
         $query = "INSERT INTO users (user_id, user_name, password) VALUES ('$user_id', '$user_name', '$password')";
 
-        mysqli_query($con, $query);
-
-        //header("Location: login.php");
-        //die;
+        if (mysqli_query($con, $query)) {
+            header("Location: login.php");
+            die;
+        } else {
+            echo "Error: " . mysqli_error($con);
+        }
     } else {
         echo "Please enter correct info";
     }
