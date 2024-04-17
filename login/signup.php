@@ -14,14 +14,14 @@ session_start();
 
             //save to query
             $user_id = random_num(20);
-            $query = "insert into users (user_id,user_name,password) values ('$user_id','$user_name','$password')"
+            $query = "insert into users (user_id,user_name,password) values ('$user_id','$user_name','$password')";
 
             mysqli_query($con, $query);
 
             header("Location: login.php");
             die;
     }else{
-        echo "PLease enter correct info"
+        echo "PLease enter correct info";
     }
 
 ?>
