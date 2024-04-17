@@ -20,6 +20,6 @@ session_start();
     <h1>This is the index page</p>
 
     <br>
-    Hello, Username!
+    Hello, <?php echo $user_data['user_name']; ?>
 </body>
 </html>

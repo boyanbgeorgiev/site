@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
             }
         }
-        echo "Please enter correct info";
+        echo "Wrong username or pass";
     } else {
         echo "Please enter correct info";
     }
