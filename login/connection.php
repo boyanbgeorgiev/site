@@ -8,4 +8,6 @@ $dbname = "login_sample_DB";
 if (!$con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname))
 {
     die("fail");
+}else{
+    echo "SUCCESS CONNECTION";
 }
