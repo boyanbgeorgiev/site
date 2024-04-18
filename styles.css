@@ -1,0 +1,98 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black; /* Set the background color for the body */
+}
+
+.topnav {
+    background-color: black; /* Set the background color for the navigation bar */
+    padding-top: 3em;
+    padding-left: 0.4em;
+    overflow: hidden;
+    font-family: "Jersey 25", sans-serif;
+    font-size: 1em;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    color: #f2f2f2; /* Set the text color for the links */
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Create a right-aligned (split) link inside the navigation bar */
+.topnav a.split {
+    float: right;
+}
+
+/* Style the logo */
+.logo {
+    width: 2em; /* Set the width of the logo */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.topnav2 {
+    background-color: black; /* Set the background color for the navigation bar */
+    padding-top: 2.5em;
+
+    overflow: hidden;
+    text-align: center;
+    font-family: "Jersey 25", sans-serif;
+    font-size: 1em;
+}
+
+/* Style the links inside the navigation bar */
+.topnav2 a {
+    color: #f2f2f2; /* Set the text color for the links */
+    text-align: center;
+    padding: 14px 45px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: "Jersey 25", sans-serif;
+}
+
+.description{
+    text-align: center;
+    padding: 10em;
+    color: white;
+    padding-bottom: 3em;
+    font-family: "Jersey 25", sans-serif;
+    font-size: 1.3em;
+}
+.tees{
+    overflow: hidden;
+    padding-left: 1.5em;
+    padding-right: 0.5em;
+}
+
+.tees a{
+    color: #f2f2f2; /* Set the text color for the links */
+    text-align: center;
+    padding-right: 1em;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: "Jersey 25", sans-serif;
+
+}
+.tees a.right{
+    float: right;
+    text-decoration: underline;
+}
+
+.tees a.tee{
+    float: left;
+    font-size:2em;
+    font-weight: bold;
+}
+
+.arrow{
+    width: 1.3em;
+    height: 1em;;
+}
