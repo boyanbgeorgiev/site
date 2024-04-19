@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black; 
+}
+
+.topnav {
+    background-color: black; /* Set the background color for the navigation bar */
+    padding-top: 2em;
+    padding-left: 0.2em;
+    overflow: hidden;
+    font-family: "Jersey 25", sans-serif;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    color: #f2f2f2; /* Set the text color for the links */
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Create a right-aligned (split) link inside the navigation bar */
+.topnav a.split {
+    float: right;
+}
+
+.logo {
+    width: 2em; /* Set the width of the logo */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Style for the container */
+#box {
+    width: 40em;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+/* Style for the form */
+form {
+    text-align: center;
+}
+
+/* Style for the form title */
+.title {
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-left: 10.8em;
+    color: white;
+    float: left;
+    font-family: "Jersey 25", sans-serif;
+    font-size: 2.5em;
+}
+
+.desc{
+font-size: 1em;
+color: white;
+float: left;
+font-family: "Jersey 25", sans-serif;
+    font-size: 1em;
+
+}
+
+/* Style for the input fields */
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    background-color: black;
+    color: white;
+    box-sizing: border-box; /* Ensures padding and border are included in the width */
+    font-family: "Jersey 25", sans-serif;
+    font-size: 1em;
+}
+
+/* Style for the submit button */
+input[type="submit"] {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    float: left;
+    width: 9em;
+}
+
+/* Style for the signup link */
+a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.links{
+    color: white;
+    font-family: "Jersey 25", sans-serif;
+    font-size: 1.5em;
+    padding-left: 17.5em;
+    text-decoration: underline;
+}
