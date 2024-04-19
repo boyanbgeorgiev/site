@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 {
 
                     $_SESSION['user_id'] = $user_data['user_id'];
-                    header("Location: index.php");
+                    header("Location: ../index.html");
                     die;
                 }
 
@@ -55,8 +55,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <a href="#news">HOODIES</a>
         <a href="#contact">TEES</a>
         <a href="#contact">E GIFT CARDS</a>
-        <a href="#about" class="split"><img src="market.png" alt="BAG" class="logo"></a>
-        <a href="#about" class="split"><img src="user.png" alt="USER" class="logo"></a>
+        <a href="#about" class="split"><img src="../market.png" alt="BAG" class="logo"></a>
+        <a href="#about" class="split"><img src="../user.png" alt="USER" class="logo"></a>
     </div>
     
     <div class="title">Log in</div>
