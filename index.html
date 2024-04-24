@@ -7,10 +7,10 @@
     <title>Project Ethereal</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- preconnection with the Google Fonts domain, which can reduce latency -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- preconnection with the Google Fonts domain, which can reduce latency -->
-    <link href="https://fonts.googleapis.com/css2?family=Jacquard+24&family=Jersey+25&family=Staatliches&display=swap" rel="stylesheet"> <!-- Google font -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Hello, $username -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jacquard+24&family=Jersey+25&family=Staatliches&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="cart.js"></script>
 </head>
 
@@ -23,36 +23,29 @@
         <a href="#tees" class="right">VIEW ALL<img src="right-arrow.png" alt="arrow" class="arrow"></a>
     </div>
 
-    <div class="container">
-        <div class="item">
-            <img src="clothing_1.png" alt="Clothing">
-            <h2>TOKYO ZIPPER</h2>
-            <p>$60.00 USD</p>
-        </div>
-        <div class="item">
-            <img src="clothing_2.png" alt="Clothing">
-            <h2>UNZIP HOODIE</h2>
-            <p>$80.00 USD</p>
-        </div>
+    <div class="container" id="item-container">
+        <!-- Items will be dynamically generated here -->
     </div>
 
     <script>
         $(document).ready(function () {
-            // Check if user is logged in
-            $.ajax({
-                url: "check_login.php", // PHP script to check login status
-                type: "GET",
-                success: function (response) {
-                    if (response.logged_in) {
-                        // User is logged in, display greeting message
-                        $(".topnav .account").html("<span>Hello, " + response.username + "</span>");
-                    } else {
-                        // User is not logged in
-                    }
-                },
-                error: function (xhr, status, error) {
-                    console.error("Error checking login status:", error);
-                }
+            // Load item data from JSON file
+            $.getJSON("items.json", function (data) {
+                // Iterate over each item
+                $.each(data, function (index, item) {
+                    // Create HTML for item
+                    var itemHTML = `
+                        <div class="item">
+                            <a href="${item.url}">
+                                <img src="${item.image}" alt="${item.name}">
+                                <h2>${item.name}</h2>
+                                <p>$${item.price.toFixed(2)} USD</p>
+                            </a>
+                        </div>
+                    `;
+                    // Append item HTML to container
+                    $("#item-container").append(itemHTML);
+                });
             });
         });
     </script>

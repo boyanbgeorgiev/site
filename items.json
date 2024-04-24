@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "name": "ITEM 1",
+        "price": 60,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "image": "clothing_1.png",
+        "url": "item1.html"
+    },
+    {
+        "id": 2,
+        "name": "ITEM 2",
+        "price": 80,
+        "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "image": "clothing_2.png",
+        "url": "item2.php"
+    }
+]

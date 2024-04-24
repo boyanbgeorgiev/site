@@ -266,3 +266,46 @@ p{
     font-family: "Jersey 25", sans-serif;
     font-size: 2em;
 }
+
+.item-container {
+    display: flex;
+}
+.images-column {
+    flex: 1;
+    padding: 20px;
+}
+.images-column img {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+}
+.description-column {
+    flex: 1;
+    padding: 20px;
+}
+.item-name {
+    font-family: "Jersey 25", sans-serif;
+    color: white;
+    font-size: 5em;
+}
+.item-description {
+    font-family: "Jersey 25", sans-serif;
+    color: white;
+    font-size: 3em;
+    padding-bottom: 1em;
+}
+.add-to-cart {
+    background-color: white;
+    color: black;
+    width:  5em;
+    height: auto;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-family: "Jersey 25", sans-serif;
+    font-size: 4em;
+    cursor: pointer;
+}
+
+
+
