@@ -9,26 +9,28 @@ body {
     background-color: black; /* Set the background color for the body */
 }
 
+/* Center the logo horizontally */
 .topnav {
     background-color: black; /* Set the background color for the navigation bar */
-    padding-top: 3em;
-    padding-left: 0.em;
+    padding-top: 2em;
+    padding-left: 0.2em;
     overflow: hidden;
     font-family: "Jersey 25", sans-serif;
     font-size: 1em;
 }
 
+
 /* Style the links inside the navigation bar */
 .topnav a {
     color: #f2f2f2; /* Set the text color for the links */
     text-align: center;
-    padding: 14px 16px;
+    padding: 0px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 1.5em;
 }
 
 /* Create a right-aligned (split) link inside the navigation bar */
-.topnav a.split {
+.topnav .split {
     float: right;
 }
 
@@ -60,7 +62,6 @@ body {
 
 .description{
     text-align: center;
-    padding: 10em;
     color: white;
     padding-bottom: 3em;
     font-family: "Jersey 25", sans-serif;
@@ -128,3 +129,140 @@ body {
     display: flex;
     flex-wrap: wrap;
 } 
+
+/* Style for the container */
+#box {
+    width: 40em;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+/* Style for the form */
+form {
+    text-align: center;
+}
+
+/* Style for the form title */
+.title {
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-left: 10.8em;
+    color: white;
+    float: left;
+    font-family: "Jersey 25", sans-serif;
+    font-size: 2.5em;
+}
+
+.desc{
+font-size: 1em;
+color: white;
+float: left;
+font-family: "Jersey 25", sans-serif;
+    font-size: 1em;
+
+}
+
+/* Style for the input fields */
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    background-color: black;
+    color: white;
+    box-sizing: border-box; /* Ensures padding and border are included in the width */
+    font-family: "Jersey 25", sans-serif;
+    font-size: 1em;
+}
+
+/* Style for the submit button */
+input[type="submit"] {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    float: left;
+    width: 9em;
+}
+
+/* Style for the signup link */
+a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.links{
+    color: white;
+    font-family: "Jersey 25", sans-serif;
+    font-size: 1.5em;
+    padding-left: 17.5em;
+    text-decoration: underline;
+}
+
+.cart-panel {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Start off hidden */
+    width: 300px;
+    height: 100%;
+    background-color: rgb(27, 27, 27);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease; /* Transition the left property */
+}
+
+.cart-panel.active {
+    right: 0; /* Show the panel */
+}
+
+
+
+p{
+    color: white;
+}
+
+/* Style the new logo */
+.logo3 {
+    align-items: center;
+    width: 10em; /* Adjust the width of the logo as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Style the close button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 24px;
+}
+.logo3{
+  height: 15em; /* Maintain aspect ratio */
+  width: auto;
+  padding-bottom: 3em;
+}
+
+.main{
+    display: flex; /* Use flexbox layout */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  height: 10em;
+}
+
+.message{
+    font-size: 15em;
+    text-align: center;
+    font-family: "Jersey 25", sans-serif;
+}
+
+.error-message {
+    color: red;
+    font-family: "Jersey 25", sans-serif;
+    font-size: 2em;
+}

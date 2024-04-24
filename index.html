@@ -4,34 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bsure</title>
+    <title>Project Ethereal</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jacquard+24&family=Jersey+25&family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- preconnection with the Google Fonts domain, which can reduce latency -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- preconnection with the Google Fonts domain, which can reduce latency -->
+    <link href="https://fonts.googleapis.com/css2?family=Jacquard+24&family=Jersey+25&family=Staatliches&display=swap" rel="stylesheet"> <!-- Google font -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Hello, $username -->
+    <script src="cart.js"></script>
 </head>
 
 <body>
-    <div class="topnav">
-        <a href="#home">HOME</a>
-        <a href="#news">HOODIES</a>
-        <a href="#contact">TEES</a>
-        <a href="#contact">E GIFT CARDS</a>
-        <a href="/login/login.php" class="split"><img src="market.png" alt="BAG" class="logo"></a>
-        <a href="#about" class="split"><img src="user.png" alt="USER" class="logo"></a>
-    </div>
-    <div class="topnav2">
-        <a href="#home">HOME</a>
-        <a href="#news">HOODIES</a>
-        <a href="#contact">TEES</a>
-        <a href="#contact">E GIFT CARDS</a>
-    </div>
-    <p class="description">PROJECT BEASURE IS A CREATIVE COLLECTIVE...NEW PRODUCTS WEEKLY...JOIN OUR SMS CLUB FOR
-        EXCLUSIVE OFFERS AND ALERTS...</p>
+    <div id="navigation"><script src="navbar.js"></script></div>
+    <p class="description">PROJECT ETHEREAL IS A CREATIVE COLLECTIVE...NEW PRODUCTS WEEKLY...JOIN OUR SMS CLUB FOR EXCLUSIVE OFFERS AND ALERTS...</p>
+    
     <div class="tees">
         <a href="#tees" class="left">FEATURED</a>
         <a href="#tees" class="right">VIEW ALL<img src="right-arrow.png" alt="arrow" class="arrow"></a>
     </div>
+
     <div class="container">
         <div class="item">
             <img src="clothing_1.png" alt="Clothing">
@@ -43,8 +34,28 @@
             <h2>UNZIP HOODIE</h2>
             <p>$80.00 USD</p>
         </div>
-        
     </div>
+
+    <script>
+        $(document).ready(function () {
+            // Check if user is logged in
+            $.ajax({
+                url: "check_login.php", // PHP script to check login status
+                type: "GET",
+                success: function (response) {
+                    if (response.logged_in) {
+                        // User is logged in, display greeting message
+                        $(".topnav .account").html("<span>Hello, " + response.username + "</span>");
+                    } else {
+                        // User is not logged in
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error("Error checking login status:", error);
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
