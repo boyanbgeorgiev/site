@@ -26,14 +26,17 @@ $stmt->bind_result($itemId, $itemName, $itemPrice, $itemDescription, $itemImage,
 // Fetch items and store them in an array
 $cartItems = array();
 while ($stmt->fetch()) {
-    $cartItems[] = array(
-        "id" => $itemId,
-        "name" => $itemName,
-        "price" => $itemPrice,
-        "description" => $itemDescription,
-        "image" => $itemImage,
-        "quantity" => $quantity
-    );
+    // For each item, repeat it according to its quantity
+    for ($i = 0; $i < $quantity; $i++) {
+        $cartItems[] = array(
+            "id" => $itemId,
+            "name" => $itemName,
+            "price" => $itemPrice,
+            "description" => $itemDescription,
+            "image" => $itemImage,
+            "quantity" => 1 // Quantity will be 1 for each repeated item
+        );
+    }
 }
 
 // Close the statement and database connection

@@ -7,6 +7,7 @@
 
 body {
     background-color: black; /* Set the background color for the body */
+    overflow: hidden;
 }
 
 /* Center the logo horizontally */
@@ -328,9 +329,8 @@ p{
 }
 
 .cart-image {
-    width: 8em;
+    width: 6em;
     height: auto;
-    padding: 0.5em;
 }
 
 .cart-name {
@@ -349,6 +349,28 @@ p{
 .cart-price {
     font-family: "Jersey 25", sans-serif;
     color: white;
-    font-size: 2em;
+    font-size: 1.5em;
     padding: 0.5em;
+}
+
+#cart-panel {
+    overflow-x: hidden; /* Disable horizontal scroll */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+#cart-panel::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+#cart-panel::-webkit-scrollbar-track {
+    background: black; /* Color of the scrollbar track */
+}
+
+#cart-panel::-webkit-scrollbar-thumb {
+    background: grey; /* Color of the scrollbar thumb */
+    border-radius: 6px; /* Border radius of the scrollbar thumb */
+}
+
+#cart-panel::-webkit-scrollbar-thumb:hover {
+    background: rgb(34, 34, 34); /* Color of the scrollbar thumb on hover */
 }
