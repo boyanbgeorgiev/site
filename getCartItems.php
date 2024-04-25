@@ -46,4 +46,3 @@ $con->close();
 // Return the cart items as JSON
 http_response_code(200);
 echo json_encode($cartItems);
-?>

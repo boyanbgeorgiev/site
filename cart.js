@@ -2,31 +2,46 @@ document.addEventListener("DOMContentLoaded", function() {
     var cartToggle = document.getElementById("cart-toggle");
     var cartPanel = document.getElementById("cart-panel");
     var addToCartBtn = document.querySelector(".add-to-cart");
-
     // Function to fetch cart items from the server
-    function loadCartItems() {
-        // Fetch cart items from the server using user_id
-        fetch('getCartItems.php')
-            .then(response => response.json())
-            .then(cartItems => {
-                // Generate cart elements for each item
-                cartItems.forEach(item => {
-                    var newItem = document.createElement("div");
-                    newItem.classList.add("cart-item");
-                    newItem.innerHTML = `
-                        <div class="cart">
-                            <p class="cart-name">${item.name}</p>
-                            <img class="cart-image" src="${item.image}" alt="${item.name}">
-                            <p class="cart-price">${item.price}$</p>
-                        </div>
-                    `;
-                    document.getElementById("cart-panel").appendChild(newItem);
-                });
-            })
-            .catch(error => {
-                console.error('Error fetching cart items:', error);
+function loadCartItems() {
+    // Fetch cart items from the server using user_id
+    fetch('getCartItems.php')
+        .then(response => response.json())
+        .then(cartItems => {
+            // Object to store stacked items
+            var stackedItems = {};
+
+            // Stack items based on their ID
+            cartItems.forEach(item => {
+                if (stackedItems[item.id]) {
+                    stackedItems[item.id].quantity++;
+                } else {
+                    stackedItems[item.id] = {
+                        quantity: 1,
+                        item: item
+                    };
+                }
             });
-    }
+
+            // Generate cart elements for stacked items
+            for (var itemId in stackedItems) {
+                var stackedItem = stackedItems[itemId];
+                var newItem = document.createElement("div");
+                newItem.classList.add("cart-item");
+                newItem.innerHTML = `
+                    <div class="cart">
+                        <p class="cart-name">${stackedItem.item.name} (${stackedItem.quantity})</p>
+                        <img class="cart-image" src="${stackedItem.item.image}" alt="${stackedItem.item.name}">
+                        <p class="cart-price">${stackedItem.item.price}$</p>
+                    </div><button class="remove-from-cart" data-quantity="${stackedItem.quantity}" data-item-id="${stackedItem.item.id}">Remove</button>
+                `;
+                document.getElementById("cart-panel").appendChild(newItem);
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching cart items:', error);
+        });
+}
 
     // Load cart items on page load
     loadCartItems();
@@ -84,3 +99,53 @@ function closeCart() {
     var cartPanel = document.getElementById("cart-panel");
     cartPanel.classList.remove("active");
 }
+
+document.addEventListener("click", function(event) {
+    if (event.target.classList.contains("remove-from-cart")) {
+        // Get the item ID from the data-item-id attribute
+        var itemId = event.target.getAttribute("data-item-id");
+        
+        // Get the quantity of the item
+        var quantity = parseInt(event.target.getAttribute("data-quantity"));
+
+        if (quantity > 1) {
+            // Decrease the quantity by 1
+            removeFromCart(itemId, quantity - 1);
+        } else {
+            // Remove the item from the cart completely
+            removeFromCart(itemId, 0);
+        }
+    }
+});
+
+function removeFromCart(itemId, newQuantity) {
+    // Calculate the updated quantity to be sent to the server
+    var updatedQuantity = newQuantity >= 0 ? newQuantity : 0;
+
+    // Send AJAX request to server to update item quantity in cart
+    fetch('updateCart.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ itemId: itemId, quantity: updatedQuantity })
+    })
+    .then(response => {
+        if (response.ok) {
+            // If new quantity is 0, remove the cart item from the DOM
+            if (updatedQuantity === 0) {
+                var cartItemElement = document.querySelector(`[data-item-id="${itemId}"]`);
+                if (cartItemElement) {
+                    cartItemElement.remove();
+                }
+            }
+            console.log("Item quantity updated in cart");
+        } else {
+            throw new Error('Failed to update item quantity in cart');
+        }
+    })
+    .catch(error => {
+        console.error('Error updating item quantity in cart:', error);
+    });
+}
+
