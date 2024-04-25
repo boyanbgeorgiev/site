@@ -10,6 +10,9 @@ document.getElementById("navigation").innerHTML = `
             <span class="close-btn" onclick="closeCart()">&times;</span><br><br>
             <!-- Your cart content goes here -->
             <p class="cart-title">CART<p><br><br>
+            <div id="cart-items-container" class="cart-items-container">
+                 <!-- Cart items will be dynamically inserted here -->
+            </div>
         </div>
         <a href="/login.php" class="split account"><img src="/img/user.png" alt="USER" class="logo"></a>
     </div>

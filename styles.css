@@ -325,6 +325,7 @@ p{
     font-size: 3em;
     font-family: "Jersey 25", sans-serif;
     color: white;
+    padding: 0.2em;
 }
 
 .cart-image {
@@ -372,4 +373,21 @@ p{
 
 #cart-panel::-webkit-scrollbar-thumb:hover {
     background: rgb(34, 34, 34); /* Color of the scrollbar thumb on hover */
+}
+
+.remove-from-cart {
+    background-color: black; /* Red background color */
+    color: white; /* White text color */
+    font-family: "Jersey 25", sans-serif;
+    font-size: 1em;
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding */
+    cursor: pointer; /* Cursor style */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+    margin: 1em;
+}
+
+.remove-from-cart:hover {
+    background-color: #d32f2f; /* Darker red color on hover */
 }
