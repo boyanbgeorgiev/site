@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: black; /* Set the background color for the body */
+    background-color: white ; /* Set the background color for the body */
 }
 
 /* Center the logo horizontally */
@@ -290,13 +290,9 @@ p{
 }
 .item-description {
     font-family: "Jersey 25", sans-serif;
-    color: grey;
-    font-size: 3em;
-}
-.item-price{
-    font-family: "Jersey 25", sans-serif;
     color: white;
     font-size: 3em;
+    padding-bottom: 1em;
 }
 .add-to-cart {
     background-color: white;
@@ -311,39 +307,5 @@ p{
     cursor: pointer;
 }
 
-.cart {
-    display: flex;
-    align-items: flex-end; /* Align items to the bottom */
-}
 
-.cart-title{
-    font-size: 3em;
-    font-family: "Jersey 25", sans-serif;
-    color: white;
-}
 
-.cart-image {
-    width: 8em;
-    height: auto;
-    padding: 0.5em;
-}
-
-.cart-name {
-    font-family: "Jersey 25", sans-serif;
-    color: white;
-    font-size: 2em;
-    padding: 0.5em;
-}
-
-.cart-desc {
-    font-family: "Jersey 25", sans-serif;
-    color: white;
-    font-size: 1em;
-}
-
-.cart-price {
-    font-family: "Jersey 25", sans-serif;
-    color: white;
-    font-size: 2em;
-    padding: 0.5em;
-}

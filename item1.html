@@ -12,24 +12,42 @@
     <link href="https://fonts.googleapis.com/css2?family=Jacquard+24&family=Jersey+25&family=Staatliches&display=swap" rel="stylesheet"> <!-- Google font -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Hello, $username -->
     <script src="cart.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Fetch the JSON data
+            $.getJSON('items.json', function (data) {
+                // Find the item with ID 1
+                var item = data.find(function (item) {
+                    return item.id === 1;
+                });
+
+                // If the item is found, display its description
+                if (item) {
+                    $('.item-name').text(item.name);
+                    $('.item-description').text(item.description);
+                    $('.item-price').text(item.price + '$');
+                }
+            });
+        });
+    </script>
 </head>
 
 <body>
     <div id="navigation"><script src="navbar.js"></script></div>
     <div class="item-container">
         <div class="images-column">
-            <img src="vup4.png" alt="Item Image 1">
-            <img src="vup1.png" alt="Item Image 2">
+            <img src="/img/vup4.png" alt="Item Image 1">
+            <img src="/img/vup1.png" alt="Item Image 2">
             <!-- Add more images as needed -->
         </div>
         <div class="description-column">
-            <div class="item-name">Item 1</div>
-            <div class="item-description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget felis non enim mollis hendrerit. Donec nec ipsum vitae risus tincidunt mollis sed vel ante.
-            </div>
+            <div class="item-name"></div>
+            <div class="item-description"></div>
+            <div class="item-price"></div>
             <button class="add-to-cart">Add to Cart</button>
         </div>
     </div>
 </body>
 
 </html>
+ 
