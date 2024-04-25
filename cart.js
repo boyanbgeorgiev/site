@@ -12,8 +12,11 @@ document.addEventListener("DOMContentLoaded", function() {
         fetch('items.json')
             .then(response => response.json())
             .then(data => {
-                // Find the item with ID 1
-                var item = data.find(item => item.id === 1);
+                // Get the ID from the item-id element
+                var id = document.querySelector(".item-id").textContent.trim();
+  
+                // Find the item with the retrieved ID
+                var item = data.find(item => item.id === parseInt(id));
   
                 if (item) {
                     // Extract item details
@@ -40,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     // Send AJAX request to add item to cart table in database
                     addToCart(item.id);
                 } else {
-                    console.error("Item with ID 1 not found in JSON data.");
+                    console.error("Item with ID " + id + " not found in JSON data.");
                 }
             })
             .catch(error => {

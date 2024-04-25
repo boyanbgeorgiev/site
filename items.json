@@ -4,7 +4,7 @@
         "name": "ITEM 1",
         "price": 60,
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "image": "/img/clothing_1.png",
+        "image": "/img/vup1.png",
         "url": "item1.html"
     },
     {
@@ -12,15 +12,15 @@
         "name": "ITEM 2",
         "price": 80,
         "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "image": "/img/clothing_2.png",
-        "url": "item2.php"
+        "image": "/img/vup2.png",
+        "url": "item2.html"
     },
     {
         "id": 3,
         "name": "ITEM 3",
         "price": 100,
         "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "image": "/img/vup1.png",
-        "url": "item3.php"
+        "image": "/img/vup4.png",
+        "url": "item3.html"
     }
 ]

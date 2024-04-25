@@ -298,6 +298,11 @@ p{
     color: white;
     font-size: 3em;
 }
+.item-id{
+    font-family: "Jersey 25", sans-serif;
+    color: white;
+    font-size: 3em;
+}
 .add-to-cart {
     background-color: white;
     color: black;
