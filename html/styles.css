@@ -379,3 +379,22 @@ p{
     height: 2em;
     width: 100%;
 }
+
+h1{
+    font-family: "Jersey 25", sans-serif;
+    color: white;
+    font-size: 5em;
+    margin: 0.2em;
+}
+.perr{
+    font-family: "Jersey 25", sans-serif;
+    color: white;
+    font-size: 3em;
+    margin: 0.5em;
+}
+label{
+    font-family: "Jersey 25", sans-serif;
+    color: white;
+    font-size: 3em;
+    margin: 0.5em;
+}

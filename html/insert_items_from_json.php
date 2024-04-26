@@ -42,4 +42,3 @@ foreach ($items as $item) {
 
 mysqli_close($con);
 
-?>

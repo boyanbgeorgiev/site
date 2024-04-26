@@ -10,6 +10,7 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
+
 // Connect to the database
 require_once('connection.php');
 

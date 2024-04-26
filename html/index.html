@@ -13,7 +13,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="PROJECT ETHEREAL IS A CREATIVE COLLECTIVE...NEW PRODUCTS WEEKLY...JOIN OUR SMS CLUB FOR EXCLUSIVE OFFERS AND ALERTS...">
+    <meta name="description" content="Project Ethereal is a Clothing Company Made in 2024">
     <title>Project Ethereal</title>
     <meta property="og:title" content="Project Ethereal">
     <meta property="og:description" content="Ethereal.">
@@ -29,13 +29,12 @@
     <script src="cart.js"></script>
 </head>
 
-
 <body>
     <div id="navigation">
         <script src="navbar.js"></script>
     </div>
-    <p class="description">PROJECT ETHEREAL IS A CREATIVE COLLECTIVE...NEW PRODUCTS WEEKLY...JOIN OUR SMS CLUB FOR
-        EXCLUSIVE OFFERS AND ALERTS...</p>
+    <h1 class="description">PROJECT ETHEREAL IS A CREATIVE COLLECTIVE...NEW PRODUCTS WEEKLY...JOIN OUR SMS CLUB FOR
+        EXCLUSIVE OFFERS AND ALERTS...</h1>
 
     <div class="tees">
         <a href="#tees" class="left">FEATURED</a>
@@ -43,31 +42,28 @@
     </div>
 
     <div class="container" id="item-container">
-        <!-- Items will be dynamically generated here -->
-    </div>
+        <?php
+        // Include the connection script
+        include 'itemconnection.php';
 
-    <script>
-        $(document).ready(function () {
-            // Load item data from JSON file
-            $.getJSON("items.json", function (data) {
-                // Iterate over each item
-                $.each(data, function (index, item) {
-                    // Create HTML for item
-                    var itemHTML = `
-                        <div class="item">
-                            <a href="item.html?id=${item.id}"> <!-- Include item ID in the URL -->
-                                <img src="${item.image}" alt="${item.name}">
-                                <h2>${item.name}</h2>
-                                <p>$${item.price.toFixed(2)} USD</p>
-                            </a>
-                        </div>
-                    `;
-                    // Append item HTML to container
-                    $("#item-container").append(itemHTML);
-                });
-            });
-        });
-    </script>
+        // Check if items were fetched
+        if ($result->num_rows > 0) {
+            // Loop through each item and generate HTML
+            while ($row = $result->fetch_assoc()) {
+                echo "<div class='item'>";
+                echo "<a href='item.html?id=" . $row['item_id'] . "'>";
+                echo "<img src='" . $row['item_image'] . "' alt='" . $row['item_name'] . "'>";
+                echo "<h2>" . $row['item_name'] . "</h2>";
+                echo "<p>$" . number_format($row['item_price'], 2) . " USD</p>";
+                echo "</a>";
+                echo "</div>";
+            }
+        } else {
+            echo "No items found.";
+        }
+        ?>
+    </div>
 </body>
+
 
 </html>

@@ -1,0 +1,69 @@
+<?php
+// Include the database connection script
+include 'itemconnection.php';
+
+// Check if the 'id' parameter exists in the URL
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+
+    // Prepare a SQL query to fetch the item details by ID
+    $sql = "SELECT * FROM items WHERE item_id = $id";
+    $result = $conn->query($sql);
+
+    // Check if any rows were returned
+    if ($result->num_rows > 0) {
+        // Fetch the item details
+        $row = $result->fetch_assoc();
+        $item_id = $row['item_id'];
+        $item_name = $row['item_name'];
+        $item_description = $row['item_description'];
+        $item_price = $row['item_price'];
+        $item_image = $row['item_image'];
+    } else {
+        // Redirect to index page if the item doesn't exist
+        header("Location: 404.html");
+        exit;
+    }
+} else {
+    // Redirect to index page if the 'id' parameter is missing
+    header("Location: 404.html");
+    exit;
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Details</title>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jacquard+24&family=Jersey+25&family=Staatliches&display=swap"
+        rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="cart.js"></script>
+</head>
+
+<body>
+    <div id="navigation">
+        <script src="navbar.js"></script>
+    </div>
+    <div class="item-container">
+        <div class="images-column">
+            <img class="item-image" src="<?php echo $item_image; ?>" alt="<?php echo $item_name; ?>"> <!-- Image will be inserted here -->
+        </div>
+        <div class="description-column">
+            <div class="item-id"><?php echo $item_id; ?></div>
+            <div class="item-name"><?php echo $item_name; ?></div>
+            <div class="item-description"><?php echo $item_description; ?></div>
+            <div class="item-price">$<?php echo number_format($item_price, 2); ?></div>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+</body>
+
+</html>
