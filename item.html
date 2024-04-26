@@ -1,32 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Item 3</title>
+    <title>Item Details</title>
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- preconnection with the Google Fonts domain, which can reduce latency -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- preconnection with the Google Fonts domain, which can reduce latency -->
-    <link href="https://fonts.googleapis.com/css2?family=Jacquard+24&family=Jersey+25&family=Staatliches&display=swap" rel="stylesheet"> <!-- Google font -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Hello, $username -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jacquard+24&family=Jersey+25&family=Staatliches&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="cart.js"></script>
     <script>
         $(document).ready(function () {
+            // Retrieve item ID from URL query parameter
+            var urlParams = new URLSearchParams(window.location.search);
+            var itemId = urlParams.get('id');
+            
             // Fetch the JSON data
             $.getJSON('items.json', function (data) {
-                // Find the item with ID 1
+                // Find the item with the corresponding ID
                 var item = data.find(function (item) {
-                    return item.id === 3;
+                    return item.id == itemId;
                 });
                 
-                // If the item is found, display its description
+                // If the item is found, display its details
                 if (item) {
                     $('.item-id').text(item.id);
                     $('.item-name').text(item.name);
                     $('.item-description').text(item.description);
-                    $('.item-price').text(item.price + '$');
+                    $('.item-price').text('$' + item.price.toFixed(2));
+                    
+                    // Display item image
+                    $('.item-image').attr('src', item.image);
+                    $('.item-image').attr('alt', item.name);
                 }
             });
         });
@@ -34,12 +41,12 @@
 </head>
 
 <body>
-    <div id="navigation"><script src="navbar.js"></script></div>
+    <div id="navigation">
+        <script src="navbar.js"></script>
+    </div>
     <div class="item-container">
         <div class="images-column">
-            <img src="/img/vup4.png" alt="Item Image 1">
-            <img src="/img/vup1.png" alt="Item Image 2">
-            <!-- Add more images as needed -->
+            <img class="item-image" src="" alt=""> <!-- Image will be inserted here -->
         </div>
         <div class="description-column">
             <div class="item-id"></div>
@@ -50,6 +57,4 @@
         </div>
     </div>
 </body>
-
 </html>
- 
