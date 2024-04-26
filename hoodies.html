@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Ethereal</title>
+    <meta property="og:title" content="Project Ethereal">
+    <meta property="og:description" content="Ethereal.">
+    <meta property="og:image" content="https://ethreal.eu/img/full logo.jpg">
+    <meta property="og:url" content="https://ethreal.eu">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jacquard+24&family=Jersey+25&family=Staatliches&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="cart.js"></script>
+</head>
+
+<body>
+    <div id="navigation"><script src="navbar.js"></script></div>
+    
+    <div class="tees">
+        <a href="#tees" class="left">HOODIES</a>
+        <a href="#tees" class="right">VIEW ALL<img src="/img/right-arrow.png" alt="arrow" class="arrow"></a>
+    </div>
+
+    <div class="container" id="item-container">
+        <!-- Items will be dynamically generated here -->
+    </div>
+
+    <script>
+        $(document).ready(function () {
+    // Load item data from JSON file
+    $.getJSON("items.json", function (data) {
+        // Iterate over each item
+        $.each(data, function (index, item) {
+            // Display only the first item
+            if (index === 0) {
+                // Create HTML for item
+                var itemHTML = `
+                    <div class="item">
+                        <a href="${item.url}">
+                            <img src="${item.image}" alt="${item.name}">
+                            <h2>${item.name}</h2>
+                            <p>$${item.price.toFixed(2)} USD</p>
+                        </a>
+                    </div>
+                `;
+                // Append item HTML to container
+                $("#item-container").append(itemHTML);
+                // Exit the loop after the first item
+                return false;
+            }
+        });
+    });
+});
+    </script>
+</body>
+
+</html>

@@ -1,10 +1,10 @@
 document.getElementById("navigation").innerHTML = `
 <div class="topnav">
         <a href="index.html">HOME</a>
-        <a href="#news">HOODIES</a>
+        <a href="hoodies.html">HOODIES</a>
         <a href="#contact">TEES</a>
         <a href="#contact">E GIFT CARDS</a>
-        <a href="#" id="cart-toggle" class="split"><img src="/img/market.png" alt="BAG" class="logo"></a>
+        <a id="cart-toggle" class="split"><img src="/img/market.png" alt="BAG" class="logo"></a>
         <div id="cart-panel" class="cart-panel">
             <!-- Close button -->
             <span class="close-btn" onclick="closeCart()">&times;</span><br><br>
@@ -12,6 +12,9 @@ document.getElementById("navigation").innerHTML = `
             <p class="cart-title">CART<p><br><br>
             <div id="cart-items-container" class="cart-items-container">
                  <!-- Cart items will be dynamically inserted here -->
+            </div>
+            <div id="cart-total">
+                <!-- Total tab content will be dynamically updated here -->
             </div>
         </div>
         <a href="/login.php" class="split account"><img src="/img/user.png" alt="USER" class="logo"></a>

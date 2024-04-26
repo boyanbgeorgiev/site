@@ -240,7 +240,7 @@ p{
     right: 10px;
     cursor: pointer;
     color: white;
-    font-size: 24px;
+    font-size: 5em;
 }
 .logo3{
   height: 15em; /* Maintain aspect ratio */
@@ -390,4 +390,17 @@ p{
 
 .remove-from-cart:hover {
     background-color: #d32f2f; /* Darker red color on hover */
+}
+
+#cart-total {
+    background-color: #f0f0f0;
+    padding: 0.5em;
+    font-size: 2em;
+    color: black;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2em;
+    width: 100%;
 }
