@@ -1,9 +1,8 @@
 document.getElementById("navigation").innerHTML = `
 <div class="topnav">
         <a href="index.html">HOME</a>
+        <a href="tees.html">TEES</a>
         <a href="hoodies.html">HOODIES</a>
-        <a href="#contact">TEES</a>
-        <a href="#contact">E GIFT CARDS</a>
         <a id="cart-toggle" class="split"><img src="/img/market.png" alt="BAG" class="logo"></a>
         <div id="cart-panel" class="cart-panel">
             <!-- Close button -->

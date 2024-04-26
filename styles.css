@@ -26,7 +26,7 @@ body {
     text-align: center;
     padding: 0px 16px;
     text-decoration: none;
-    font-size: 1.5em;
+    font-size: 2em;
 }
 
 /* Create a right-aligned (split) link inside the navigation bar */
@@ -38,26 +38,6 @@ body {
 .logo {
     width: 2em; /* Set the width of the logo */
     height: auto; /* Maintain aspect ratio */
-}
-
-.topnav2 {
-    background-color: black; /* Set the background color for the navigation bar */
-    padding-top: 2.5em;
-
-    overflow: hidden;
-    text-align: center;
-    font-family: "Jersey 25", sans-serif;
-    font-size: 1em;
-}
-
-/* Style the links inside the navigation bar */
-.topnav2 a {
-    color: #f2f2f2; /* Set the text color for the links */
-    text-align: center;
-    padding: 14px 45px;
-    text-decoration: none;
-    font-size: 17px;
-    font-family: "Jersey 25", sans-serif;
 }
 
 .description{
@@ -114,15 +94,17 @@ body {
 }
 
 .item h2 {
-    font-size: 1.2em;
+    font-size: 3em;
     margin-top: 10px;
     color: white;
+    text-decoration: none;
 }
 
 .item p {
-    font-size: 1em;
+    font-size: 1.5em;
     color: white;
     margin-top: 5px;
+    text-decoration: none;  
 }
 
 .container {
@@ -146,19 +128,18 @@ form {
 .title {
     font-weight: bold;
     margin-bottom: 20px;
-    padding-left: 10.8em;
-    color: white;
+    padding-left: 6.8em;
     float: left;
     font-family: "Jersey 25", sans-serif;
-    font-size: 2.5em;
+    font-size: 4em;
+    color: white;
 }
 
 .desc{
-font-size: 1em;
-color: white;
+font-size: 2.5em;
+color: rgb(255, 255, 255);
 float: left;
 font-family: "Jersey 25", sans-serif;
-    font-size: 1em;
 
 }
 
@@ -172,6 +153,7 @@ input[type="submit"] {
     border: 1px solid #ccc;
     background-color: black;
     color: white;
+    border-radius: 0.2em;
     box-sizing: border-box; /* Ensures padding and border are included in the width */
     font-family: "Jersey 25", sans-serif;
     font-size: 1em;
@@ -226,12 +208,6 @@ p{
     color: white;
 }
 
-/* Style the new logo */
-.logo3 {
-    align-items: center;
-    width: 10em; /* Adjust the width of the logo as needed */
-    height: auto; /* Maintain aspect ratio */
-}
 
 /* Style the close button */
 .close-btn {
@@ -242,19 +218,18 @@ p{
     color: white;
     font-size: 5em;
 }
-.logo3{
-  height: 15em; /* Maintain aspect ratio */
-  width: auto;
-  padding-bottom: 3em;
-}
+
 
 .main{
     display: flex; /* Use flexbox layout */
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
-  height: 10em;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
 }
-
+.logo3{
+  height: 15em; /* Maintain aspect ratio */
+  width: auto;
+  padding: 3em;
+}
 .message{
     font-size: 15em;
     text-align: center;
@@ -300,7 +275,7 @@ p{
 }
 .item-id{
     font-family: "Jersey 25", sans-serif;
-    color: white;
+    color: black;
     font-size: 3em;
 }
 .add-to-cart {
