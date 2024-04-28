@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 }
 
                 // Redirect to the welcome page
-                header("Location: welcome.php");
+                header("Location: welcome.html");
                 exit; // Terminate script execution
             } else {
                 echo '<p class="error-message">Wrong password</p>';
@@ -119,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         </form> 
     </div>
 <div class="links">
-    <a href="signup.php">CREATE ACCOUNT</a><br><br>
+    <a href="signup.html">CREATE ACCOUNT</a><br><br>
     <a href="logout.php">LOG OUT</a>
 </div>
 </body>

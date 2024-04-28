@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     setcookie('user_name', $user_name, time() + (86400 * 30), '/'); // Cookie expires in 30 days
     
                     // Redirect to the login page
-                    header("Location: login.php");
+                    header("Location: login.html");
                     exit;
                 } else {
                     echo '<p class="error-message">Error executing the statement: ' . mysqli_stmt_error($insert_stmt) . '</p>';
@@ -85,7 +85,7 @@ function randomSalt($length) {
     <div id="navigation"></div>
 <script src="../navbar.js"></script> 
     
-    <div class="title">SIGN UP</div>
+    <div class="title">Create Account</div>
     <div id="box">
         <form method="post">
             
@@ -97,7 +97,7 @@ function randomSalt($length) {
         </form> 
     </div>
 <div class="links">
-    <a href="login.php">LOG IN</a><br><br>
+    <a href="login.html">LOG IN</a><br><br>
     <a href="logout.php">LOG OUT</a>
 </div>
 </body>

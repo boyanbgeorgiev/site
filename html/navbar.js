@@ -16,9 +16,9 @@ document.getElementById("navigation").innerHTML = `
                 <!-- Total tab content will be dynamically updated here -->
             </div>
         </div>
-        <a href="/login.php" class="split account"><img src="/img/user.png" alt="USER" class="logo"></a>
+        <a href="/login.html" class="split account"><img src="/img/user.png" alt="USER" class="logo"></a>
     </div>
     <div class="main">
-        <img class="logo3" src="/img/full logo.jpg" alt="logo">
+        <img class="logo3" src="/img/new full logo.jpg" alt="logo">
         </div>
 `;
