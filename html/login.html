@@ -7,7 +7,7 @@ include("functions.php");
 // Check if user is already logged in using session
 if(isset($_SESSION['user_name'])) {
     // Redirect to the welcome page
-    header("Location: welcome.php");
+    header("Location: welcome.html");
     exit; // Terminate script execution
 }
 
@@ -29,7 +29,7 @@ if(isset($_COOKIE['rememberme'])) {
             $_SESSION['user_name'] = $user_data['user_name'];
 
             // Redirect to the welcome page
-            header("Location: welcome.php");
+            header("Location: welcome.html");
             exit; // Terminate script execution
         }
     }

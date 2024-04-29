@@ -67,7 +67,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Toggle cart panel visibility
     cartToggle.addEventListener("click", function() {
-        cartPanel.classList.toggle("active");
+        // Check login status before opening the cart
+        checkLoginStatus();
     });
 
     // Handle adding an item to the cart
@@ -157,6 +158,37 @@ document.addEventListener("DOMContentLoaded", function() {
         cartTotalContainer.textContent = "Total Price: $" + totalPrice.toFixed(2);
     }
 });
+
+// Function to check login status and display appropriate message
+function checkLoginStatus() {
+    fetch('check_login.php')
+        .then(response => response.json())
+        .then(data => {
+            if (data.logged_in) {
+                // User is logged in, open the cart panel
+                document.getElementById("cart-panel").classList.toggle("active");
+            } else {
+                // User is not logged in, display message and login button
+                var cartPanel = document.getElementById("cart-panel");
+                cartPanel.innerHTML = "";
+                var loginMessage = document.createElement("p");
+                loginMessage.textContent = "You are not logged in";
+                loginMessage.classList.add("login");
+                var loginButton = document.createElement("button");
+                loginButton.textContent = "Login";
+                loginButton.classList.add("login-button");
+                loginButton.addEventListener("click", function() {
+                    window.location.href = "login.html";
+                });
+                cartPanel.appendChild(loginMessage);
+                cartPanel.appendChild(loginButton);
+                cartPanel.classList.add("active");
+            }
+        })
+        .catch(error => {
+            console.error('Error checking login status:', error);
+        });
+}
 
 // Function to close the cart panel
 function closeCart() {
