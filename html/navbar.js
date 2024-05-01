@@ -15,6 +15,10 @@ document.getElementById("navigation").innerHTML = `
             <div id="cart-total">
                 <!-- Total tab content will be dynamically updated here -->
             </div>
+            <div id="cart-checkout">
+                <!-- Total tab content will be dynamically updated here -->
+                <button id="checkout-button">Checkout</button>
+            </div>
         </div>
         <a href="/login.html" class="split account"><img src="/img/user.png" alt="USER" class="logo"></a>
     </div>

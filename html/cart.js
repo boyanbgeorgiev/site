@@ -195,3 +195,49 @@ function closeCart() {
     var cartPanel = document.getElementById("cart-panel");
     cartPanel.classList.remove("active");
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    var checkoutButton = document.getElementById("checkout-button");
+
+    // Add event listener to the checkout button
+    checkoutButton.addEventListener("click", function() {
+        // Call a function to handle the checkout process
+        handleCheckout();
+    });
+
+    // Function to handle the checkout process
+    function handleCheckout() {
+        // Perform any necessary validation or processing before checkout
+        // For example, you can check if the cart is empty before proceeding to checkout
+        if (cartIsEmpty()) {
+            alert("Your cart is empty. Please add items to your cart before proceeding to checkout.");
+            return; // Stop execution if cart is empty
+        }
+
+        // If cart is not empty, redirect the user to the checkout page
+        window.location.href = "checkout.html";
+    }
+
+    // Function to check if the cart is empty
+    function cartIsEmpty() {
+        // Check if the cart items container is empty
+        var cartItemsContainer = document.getElementById("cart-items-container");
+        return cartItemsContainer.children.length === 0;
+    }
+});
+document.addEventListener("click", function(event) {
+    // Check if the clicked element has the class "remove-from-cart"
+    if (event.target.classList.contains("remove-from-cart")) {
+        // Get the price of the item being removed
+        var itemPrice = parseFloat(event.target.previousElementSibling.querySelector(".cart-price").textContent.replace('$', ''));
+        
+        // Get the current total price
+        var totalPrice = parseFloat(document.getElementById("cart-total").textContent.replace('Total Price: $', ''));
+        
+        // Calculate the new total price after removing the item
+        var newTotalPrice = totalPrice - itemPrice;
+        
+        // Update the total price displayed in the cart
+        document.getElementById("cart-total").textContent = 'Total Price: $' + newTotalPrice.toFixed(2);
+    }
+});
