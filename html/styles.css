@@ -16,6 +16,8 @@ body {
 
 h2{
     font-size: 2em;
+    color: white;
+    font-family: "Jersey 25", sans-serif;
 }
 
 /* Center the logo horizontally */
@@ -516,4 +518,30 @@ main {
     box-sizing: border-box; /* Ensures padding and border are included in the width */
     font-family: "Jersey 25", sans-serif;
     font-size: 1em;
+}
+#cart-items{
+    border: white solid 2px;
+    border-radius: 10px;    
+}
+.desc{
+    font-family: "Jersey 25", sans-serif;
+    color: white;
+    font-size: 3em;
+    margin: 0.5em;
+}
+.pay-image{
+    height: 10em;
+    width: auto;
+}
+.pay-item{
+    border: white solid 2px;
+    border-radius: 10px;
+    margin: 2em;
+    padding: 1em;
+}
+.pay-title{
+    margin: 0.5em;
+}
+#payment-form label {
+    text-align: left;
 }
