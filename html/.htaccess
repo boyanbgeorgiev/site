@@ -1,0 +1,17 @@
+RewriteEngine On
+RewriteBase /
+
+# Redirect www.ethreal.eu to https://ethreal.eu
+RewriteCond %{HTTP_HOST} ^www\.ethreal\.eu$ [NC]
+RewriteRule ^ https://ethreal.eu%{REQUEST_URI} [L,R=301]
+
+# Redirect HTTP to HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Custom Error Pages
+ErrorDocument 404 /404.html
+ErrorDocument 403 /403.html
+
+# Treat .html files as PHP
+AddType application/x-httpd-php .html

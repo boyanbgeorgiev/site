@@ -521,7 +521,10 @@ main {
 }
 #cart-items{
     border: white solid 2px;
-    border-radius: 10px;    
+    border-radius: 10px;  
+    width: 40em;  
+    float: right;
+    margin: 2em;
 }
 .desc{
     font-family: "Jersey 25", sans-serif;
@@ -538,10 +541,21 @@ main {
     border-radius: 10px;
     margin: 2em;
     padding: 1em;
+    height: 20em;
 }
 .pay-title{
     margin: 0.5em;
 }
-#payment-form label {
+#payment-form{
     text-align: left;
+}
+#payment-tab{
+    border: white solid 2px;
+    border-radius: 10px;
+    margin: 2em;
+    padding: 1em;
+    height: 40em;
+}
+.cont{
+    display: flex;
 }
