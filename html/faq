@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var faqs = document.querySelectorAll('.faq h2');
+            faqs.forEach(function(faq) {
+                faq.addEventListener('click', function() {
+                    this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <h1>Frequently Asked Questions</h1>
+        
+        <div class="faq">
+            <h2>What is your return policy?</h2>
+            <p style="display: none;">Our return policy allows you to return items within 30 days of purchase. Items must be in original condition and packaging. Please contact our support team for more details.</p>
+        </div>
+        
+        <div class="faq">
+            <h2>How can I track my order?</h2>
+            <p style="display: none;">Once your order has been shipped, you will receive an email with a tracking number and a link to track your order online.</p>
+        </div>
+        
+        <div class="faq">
+            <h2>Do you offer international shipping?</h2>
+            <p style="display: none;">Yes, we offer international shipping to most countries. Shipping fees and delivery times vary depending on the destination.</p>
+        </div>
+        
+        <div class="faq">
+            <h2>How can I contact customer support?</h2>
+            <p style="display: none;">You can contact our customer support team via email at support@example.com or by calling our toll-free number 1-800-123-4567.</p>
+        </div>
+    </div>
+</body>
+</html>
