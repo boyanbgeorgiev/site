@@ -565,3 +565,13 @@ main {
     font-family: "Jersey 25", sans-serif;
     margin: 2em;
 }
+.h2{
+    font-size: 2em;
+    color: white;
+    font-family: "Jersey 25", sans-serif;
+}
+p{
+    font-size: 1em;
+    color: white;
+    font-family: "Jersey 25", sans-serif;
+}
