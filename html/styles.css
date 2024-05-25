@@ -559,3 +559,8 @@ main {
 .cont{
     display: flex;
 }
+.h2{
+    font-size: 2em;
+    color: white;
+    font-family: "Jersey 25", sans-serif;
+}
