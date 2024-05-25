@@ -2,15 +2,6 @@
 <html lang="en">
 
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7XM5CTXDZB"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-7XM5CTXDZB');
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="PROJECT ETHEREAL IS A CREATIVE COLLECTIVE...NEW PRODUCTS WEEKLY...JOIN OUR SMS CLUB FOR EXCLUSIVE OFFERS AND ALERTS...">
@@ -29,20 +20,21 @@
 </head>
 
 <body>
-    <h1>Contact Us</h1>
-    <form action="submit_contact.php" method="post">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email" required>
-        
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="6" required></textarea>
-        
-        <input type="submit" value="Submit">
-    </form>
+    <main>
+        <h1>Contact Us</h1>
+        <p>Get in touch with us for any inquiries or feedback.</p>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea><br><br>
+            <input type="submit" value="Send">
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Project Ethreal. All rights reserved.</p>
+    </footer>
 </body>
-
-
 </html>
