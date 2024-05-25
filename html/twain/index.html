@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document Scanner</title>
+    <script src="https://cdn.dynamsoft.com/dwt/latest/dist/dynamsoft.webtwain.min.js"></script>
+    <script>
+        function onWebTwainReady() {
+            var DWObject = Dynamsoft.WebTwainEnv.GetWebTwain('dwtcontrolContainer');
+            if (DWObject) {
+                // Присвояване на функции към бутоните
+                document.getElementById('scanBtn').onclick = function() {
+                    scanDocument(DWObject);
+                };
+
+                document.getElementById('uploadBtn').onclick = function() {
+                    uploadDocument(DWObject);
+                };
+            }
+        }
+
+        function scanDocument(DWObject) {
+            DWObject.SelectSource(function() {
+                DWObject.OpenSource();
+                DWObject.AcquireImage();
+            }, function(errorCode, errorString) {
+                console.error("Error selecting source:", errorString);
+            });
+        }
+
+        function uploadDocument(DWObject) {
+            DWObject.HTTPUploadThroughPost(
+                'upload.php',
+                DWObject.CurrentImageIndexInBuffer,
+                'scanned-image.jpg',
+                function() {
+                    console.log('Image uploaded successfully.');
+                    alert('Image uploaded successfully.');
+                },
+                function(errorCode, errorString) {
+                    console.error("Error uploading image:", errorString);
+                }
+            );
+        }
+
+        window.onload = function() {
+            Dynamsoft.WebTwainEnv.RegisterEvent('OnWebTwainReady', onWebTwainReady);
+            Dynamsoft.WebTwainEnv.Load();
+        };
+    </script>
+</head>
+<body>
+    <h1>Document Scanner</h1>
+    <button id="scanBtn">Scan Document</button>
+    <button id="uploadBtn">Upload Document</button>
+    <div id="dwtcontrolContainer"></div>
+</body>
+</html>

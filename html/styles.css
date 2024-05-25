@@ -559,3 +559,9 @@ main {
 .cont{
     display: flex;
 }
+.descr{
+    font-size: 3em;
+    color: rgb(255, 255, 255);
+    font-family: "Jersey 25", sans-serif;
+    margin: 2em;
+}
