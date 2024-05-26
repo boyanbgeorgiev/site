@@ -18,6 +18,7 @@ h2{
     font-size: 2em;
     color: white;
     font-family: "Jersey 25", sans-serif;
+    padding-left: 1em;
 }
 
 /* Center the logo horizontally */
@@ -135,10 +136,17 @@ form {
     text-align: center;
 }
 
-p{
-    font-size: 1em;
+p {
+    font-size: 1.5em;
     color: white;
     font-family: "Jersey 25", sans-serif;
+}
+
+.policy{
+    font-size: 1.5em;
+    color: white;
+    font-family: "Jersey 25", sans-serif;
+    padding-left: 3em;
 }
 
 /* Style for the form title */
@@ -572,11 +580,6 @@ main {
     color: white;
     font-family: "Jersey 25", sans-serif;
 }
-p{
-    font-size: 1em;
-    color: white;
-    font-family: "Jersey 25", sans-serif;
-}
 
 .title {
     font-size: 36px;
@@ -679,4 +682,11 @@ p{
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+li {
+    font-size: 1.3em;
+    color: white;
+    font-family: "Jersey 25", sans-serif;
+    padding-left: 6em;
 }
