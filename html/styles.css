@@ -136,7 +136,9 @@ form {
 }
 
 p{
+    font-size: 1em;
     color: white;
+    font-family: "Jersey 25", sans-serif;
 }
 
 /* Style for the form title */
