@@ -100,10 +100,23 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Handle removing an item from the cart
     document.addEventListener("click", function(event) {
+        // Check if the clicked element has the class "remove-from-cart"
         if (event.target.classList.contains("remove-from-cart")) {
+            // Get the price of the item being removed
+            var itemPrice = parseFloat(event.target.previousElementSibling.querySelector(".cart-price").textContent.replace('$', ''));
+            
+            // Get the current total price
+            var totalPrice = parseFloat(document.getElementById("cart-total").textContent.replace('Total Price: $', ''));
+            
+            // Calculate the new total price after removing the item
+            var newTotalPrice = totalPrice - itemPrice;
+            
+            // Update the total price displayed in the cart
+            document.getElementById("cart-total").textContent = 'Total Price: $' + newTotalPrice.toFixed(2);
+    
             var itemId = event.target.getAttribute("data-item-id");
             var newQuantity = parseInt(event.target.getAttribute("data-quantity")) - 1;
-
+    
             // Send AJAX request to update item quantity in cart
             fetch('updateCart.php', {
                 method: 'POST',
@@ -223,21 +236,5 @@ document.addEventListener("DOMContentLoaded", function() {
         // Check if the cart items container is empty
         var cartItemsContainer = document.getElementById("cart-items-container");
         return cartItemsContainer.children.length === 0;
-    }
-});
-document.addEventListener("click", function(event) {
-    // Check if the clicked element has the class "remove-from-cart"
-    if (event.target.classList.contains("remove-from-cart")) {
-        // Get the price of the item being removed
-        var itemPrice = parseFloat(event.target.previousElementSibling.querySelector(".cart-price").textContent.replace('$', ''));
-        
-        // Get the current total price
-        var totalPrice = parseFloat(document.getElementById("cart-total").textContent.replace('Total Price: $', ''));
-        
-        // Calculate the new total price after removing the item
-        var newTotalPrice = totalPrice - itemPrice;
-        
-        // Update the total price displayed in the cart
-        document.getElementById("cart-total").textContent = 'Total Price: $' + newTotalPrice.toFixed(2);
     }
 });

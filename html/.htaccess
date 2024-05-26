@@ -15,3 +15,14 @@ ErrorDocument 403 /403.html
 
 # Treat .html files as PHP
 AddType application/x-httpd-php .html
+
+## Set expires headers for images (e.g., jpg, jpeg, gif, png, bmp)
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType img/jpeg "access plus 1 year"
+    ExpiresByType img/png "access plus 1 year"
+    ExpiresByType img/gif "access plus 1 year"
+    ExpiresByType img/svg+xml "access plus 1 year"
+    ExpiresByType img/x-icon "access plus 1 year"
+</IfModule>
+

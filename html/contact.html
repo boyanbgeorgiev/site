@@ -2,19 +2,10 @@
 <html lang="en">
 
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7XM5CTXDZB"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-7XM5CTXDZB');
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="PROJECT ETHEREAL IS A CREATIVE COLLECTIVE...NEW PRODUCTS WEEKLY...JOIN OUR SMS CLUB FOR EXCLUSIVE OFFERS AND ALERTS...">
-    <title>Project Ethereal</title>
+    <title>Contact</title>
     <meta property="og:title" content="Project Ethereal">
     <meta property="og:description" content="Ethereal.">
     <meta property="og:image" content="https://ethreal.eu/img/full logo.jpg">
@@ -29,20 +20,45 @@
 </head>
 
 <body>
-    <h1>Contact Us</h1>
-    <form action="submit_contact.php" method="post">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email" required>
-        
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="6" required></textarea>
-        
-        <input type="submit" value="Submit">
-    </form>
+    <header>
+        <div id="navigation">
+            <script src="navbar.js"></script>
+        </div>
+    </header>
+    <main class="main">
+        <h1 class="contact-header">Contact Us</h1>
+        <p class="contact-text">Get in touch with us for any inquiries or feedback.</p>
+        <form class="contact-form">
+            <label class="form-label" for="name">Name:</label>
+            <input class="form-input" type="text" id="name" name="name"><br><br>
+            <label class="form-label" for="email">Email:</label>
+            <input class="form-input" type="email" id="email" name="email"><br><br>
+            <label class="form-label" for="message">Message:</label>
+            <textarea class="form-textarea" id="message" name="message"></textarea><br><br>
+            <input class="form-submit" type="submit" value="Send">
+        </form>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h2>About Us</h2>
+                <h3>Redefining fashion with eco-friendly clothing solutions. Experience timeless style and sustainability in every stitch.</h3>
+            </div>
+            <div class="footer-section">
+               
+            </div>
+            <div class="footer-section">
+                <h2>Follow Us:</h2>
+                <div class="social-icons">
+                    <a class="icon" href="https://www.facebook.com/project.ethreal"><img src="img/facebook-icon.png" alt="Facebook"></a>
+                    <a class="icon" href="https://twitter.com/project_ethreal"><img src="img/twitter-icon.png" alt="Twitter"></a>
+                    <a class="icon" href="https://www.instagram.com/ethreal.project/"><img src="img/instagram-icon.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <p class="copyright">&copy; 2024 Contact Us</p>
+        </div>
+    </footer>
 </body>
-
-
 </html>
